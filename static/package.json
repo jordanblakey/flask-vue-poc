@@ -1,0 +1,36 @@
+{
+  "name": "static",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack -p --progress webpack.config.js",
+    "dev-build": "webpack --progress -d --config webpack.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch:webpack": "webpack --progress -d --config webpack.config.js",
+    "watch:flask": "export FLASK_ENV=development; (cd ../; gunicorn kilimanjaro:app -w2 -b 127.0.0.1:10000 --reload -t 120)",
+    "watch": "npm-run-all --parallel watch:*"
+  },
+
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "css-loader": "^1.0.0",
+    "vue-loader": "^15.4.2",
+    "vue-template-compiler": "^2.5.17",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2",
+    "yarn-run-all": "^3.1.1"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+  },
+  "dependencies": {
+    "vue": "^2.5.17"
+  }
+}
